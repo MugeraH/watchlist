@@ -21,14 +21,14 @@ href='{{url_for('static',filename='css/index.css')}}'> {%endblock%}
 
 <!-- Popular movie -->
 <div class="container">
-  <h3>Popular Movies</h3>
+  <h3 class="text-center">Popular Movies</h3>
   <ul class="">
     {{ macro.displayMovieList(popular)}}
   </ul>
 </div>
 <div class="container">
   <!-- Upcoming movie  -->
-  <h3>Upcoming Movies</h3>
+  <h3 class="text-center">Upcoming Movies</h3>
   <ul>
     {{ macro.displayMovieList(upcoming)}}
   </ul>
@@ -36,7 +36,7 @@ href='{{url_for('static',filename='css/index.css')}}'> {%endblock%}
 
 <div class="container">
   <!-- Now showing movie -->
-  <h3>Now Showing</h3>
+  <h3 class="text-center">Now Showing</h3>
   <ul>
     {{ macro.displayMovieList(now_showing)}}
   </ul>

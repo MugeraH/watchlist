@@ -23,18 +23,24 @@
       </span> -->
 
       <div class="row ml-5">
-        <h1>Reviews</h1>
+        <h3>Reviews</h3>
         <hr />
 
         {% if reviews %} {{macro.displayReviews(reviews)}} {% else%}
-        <h3 class="text-center">This movie has no reviews</h3>
+        <div
+          class="review-wrapper"
+          style="display: flex; flex-direction: column; justify-content: center"
+        >
+          <h4 class="text-center">This movie has no reviews</h4>
 
-        <a
-          class="btn btn-success btn-lg text-center"
-          href="/movie/review/new/{{movie.id}}"
-        >
-          Write a new review</a
-        >
+          <a
+            class="btn btn-success btn-lg text-center"
+            href="/movie/review/new/{{movie.id}}"
+          >
+            Write a new review</a
+          >
+        </div>
+
         {% endif %}
       </div>
     </div>

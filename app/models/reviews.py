@@ -1,11 +1,12 @@
 class Review:
     all_reviews = []
     
-    def __init__(self,movie_id,title,imageurl,review):
+    def __init__(self,movie_id,title,imageurl,review,reviewer):
         self.movie_id = movie_id
         self.title = title
         self.imageurl = imageurl
         self.review = review
+        self.reviewer = reviewer
         
     def save_review(self):
         Review.all_reviews.append(self)
