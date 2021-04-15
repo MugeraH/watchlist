@@ -1,0 +1,17 @@
+.container {
+  background-color: green !important;
+}
+
+.wrapper {
+  display: flex;
+  background-color: green !important;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  text-decoration: none;
+  color: red;
+}
