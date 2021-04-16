@@ -5,10 +5,6 @@ from .forms import ReviewForm
 from ..models import Review
 
 
-
-
-
-
 #views
 @main.route('/')
 def index():

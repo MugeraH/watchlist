@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  background: white;
+  background: white !important;
 }
 
 ul li {
