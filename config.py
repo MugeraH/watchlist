@@ -31,3 +31,10 @@ config_options = {
 'development':DevConfig,
 'production':ProdConfig
 }
+
+
+# aec9bb89058643fa9ce5d16218cb0c8b
+
+
+# # https://newsapi.org/v2/everything?q=tesla&from=2021-03-18&sortBy=publishedAt&apiKey=aec9bb89058643fa9ce5d16218cb0c8b
+# https://newsapi.org/v2/everything&apiKey=aec9bb89058643fa9ce5d16218cb0c8b
