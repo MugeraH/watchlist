@@ -13,7 +13,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Sign In')
 
 
-class RegistarionForm(FlaskForm):
+class RegistrationForm(FlaskForm):
     email = StringField('Your Email Address', validators=[Required(),Email()])
     username = StringField('Enter your username',validators=[Required()])
     password = PasswordField('Password',validators=[Required(),EqualTo('password_confirm',message='Passwords must match')])

@@ -72,9 +72,9 @@ def new_review(id):
     return render_template('new_review.html',title = title, review_form=form, movie=movie)
 
 
-@main.route('./user/<uname>')
+@main.route('/user/<uname>')
 def profile(uname):
-    User = User.query.filter_by(username = uname).first()
+    user = User.query.filter_by(username = uname).first()
     
     if user is None:
         abort(404)
@@ -90,7 +90,7 @@ def update_profile(uname):
     
     form = UpdateProfile()
     
-    if form.validate_on_submit:
+    if form.validate_on_submit():
         user.bio = form.bio.data
         
         db.session.add(user)
@@ -100,10 +100,10 @@ def update_profile(uname):
     return render_template('profile/update.html',form = form)
 
 
-@main.route('./user/<uname>/update/pic',methods = ['POST'])
+@main.route('/user/<uname>/update/pic',methods = ['POST'])
 @login_required
 def update_pic(uname):
-    user = User.query.filter_by(username = uname).frist()
+    user = User.query.filter_by(username = uname).first()
     if 'photo' in request.files:
         filename = photos.save(request.files['photo'])
         path = f'photos/{filename}'
