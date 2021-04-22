@@ -27,6 +27,9 @@ class ProdConfig(Config):
     """
     pass
 
+class TestConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://mugera:Mugbwo9856@localhost/watchlist_test'
+
 class DevConfig(Config):
     """
     Development configuration child class
@@ -34,11 +37,13 @@ class DevConfig(Config):
     Args:
         Config :The parent configuration class with General configuration settings
     """
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://mugera:Mugbwo9856@localhost/watchlist'
     DEBUG = True
     
 config_options = {
 'development':DevConfig,
-'production':ProdConfig
+'production':ProdConfig,
+'test':TestConfig
 }
 
 

@@ -3,7 +3,7 @@ from . import main
 from ..request import get_movies,get_movie,search_movie
 from .forms import ReviewForm,UpdateProfile
 from ..models import Review,User
-from flask_login import login_required
+from flask_login import login_required,current_user
 from .. import db,photos
 
 
@@ -39,6 +39,7 @@ def movie(id):
     movie = get_movie(id)
     title = f'{movie.title}'
     reviews = Review.get_reviews(movie.id)
+    print(reviews)
     return render_template('movie.html',title = title,movie = movie,reviews = reviews)
 
 
@@ -63,10 +64,12 @@ def new_review(id):
     if form.validate_on_submit():
         title = form.title.data
         review = form.review.data
-      
-        new_review = Review(movie.id,title,movie.poster,review)
+        
+        #update review instance
+        new_review = Review(movie_id=movie.id,movie_title=title,image_path=movie.poster,movie_review=review,user=current_user)
+        #Save review method
         new_review.save_review()
-        return redirect(url_for('movie',id = movie.id ))
+        return redirect(url_for('.movie',id = movie.id ))
 
     title = f'{movie.title} review'
     return render_template('new_review.html',title = title, review_form=form, movie=movie)
